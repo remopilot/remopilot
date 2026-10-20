@@ -3,9 +3,7 @@ require "shellwords"
 class Remopilot < Formula
   desc "Remote project gateway and paired machine agent"
   homepage "https://remopilot.com"
-  version "1.0.24"
   license :cannot_represent
-  skip_clean "libexec"
 
   on_macos do
     on_arm do
@@ -17,6 +15,8 @@ class Remopilot < Formula
       sha256 "919c736f4f0ce986b585fe98f96aa37d1c2c1b5384d2546c3d15e047efebac6c"
     end
   end
+
+  skip_clean "libexec"
 
   def install
     # Preserve signed bytes, helper, Skills, receipts and relinking materials.
