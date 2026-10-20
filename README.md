@@ -29,7 +29,7 @@ Version `1.0.24` provides macOS packages for:
 | `darwin-arm64` | Apple Silicon Mac | `remopilot-1.0.24-darwin-arm64.tar.gz` |
 | `darwin-x64` | Intel Mac | `remopilot-1.0.24-darwin-x64.tar.gz` |
 
-Windows and Linux packages are not provided in this release. Do not install a package for another platform or reuse an older archive for this version.
+Other platforms are not part of this release. Do not install a package for another platform or reuse an older archive for this version.
 
 The Intel package has not yet been fully verified on a physical Intel Mac. Check browser pairing, background-service permissions and cold-start behavior on the target machine before relying on it.
 

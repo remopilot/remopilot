@@ -11,7 +11,7 @@ Version 1.0.24 is a macOS release for Apple Silicon and Intel Macs.
 
 Both archives are Developer ID signed and notarized. The Apple Silicon package is signed, notarized and tested for installation and CLI startup. The Intel package has not yet been fully verified on a physical Intel Mac; check pairing, background-service permissions and cold-start behavior on the target machine.
 
-Linux and Windows packages are not part of this release.
+Other platforms are not part of this release.
 
 ## Changes
 

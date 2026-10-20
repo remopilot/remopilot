@@ -2,7 +2,7 @@
 
 ## Availability
 
-Version `1.0.24` provides macOS packages for Apple Silicon and Intel Macs. Windows and Linux packages are not provided in this release.
+Version `1.0.24` provides macOS packages for Apple Silicon and Intel Macs. Other platforms are not part of this release.
 
 Install only the archive for the Mac you are using. Never paste a GitHub token, pairing code, private key or other credential into these instructions, chat or an issue.
 

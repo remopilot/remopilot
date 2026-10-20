@@ -4,7 +4,7 @@ This reference ships with the target machine's product skills. Read it on the or
 
 ## Creation and readiness
 
-app_access(open) and app_run create a separate background process from a real absolute `.app` path (macOS) or `.exe` path (Windows). The default isolation=strict requires a supported independent profile contract; Chromium apps currently support dedicated user-data-dir profiles. Unsupported apps return APP_DATA_ISOLATION_UNSUPPORTED. Use isolation=process only when the user accepts process isolation with shared app data. If multiple instances are unsupported, APP_INSTANCE_UNSUPPORTED preserves the user's original instance.
+app_access(open) and app_run create a separate background process from a real absolute `.app` path. The default isolation=strict requires a supported independent profile contract; Chromium apps currently support dedicated user-data-dir profiles. Unsupported apps return APP_DATA_ISOLATION_UNSUPPORTED. Use isolation=process only when the user accepts process isolation with shared app data. If multiple instances are unsupported, APP_INSTANCE_UNSUPPORTED preserves the user's original instance.
 
 open binds the entity to the original process identity and checks its window readiness. It cannot follow a replacement process; launch completion and window readiness are separate evidence.
 
@@ -39,18 +39,3 @@ Lease expiry or a cleanup attempt is not confirmed closure. Cleanup requires the
 
 Confirm closure, business effects, and input terminal state separately. Report retained entityId, operationId/callId, original binding, and blockers. Unfinished entities and receipts in an old generation remain recoverable there; do not migrate or replay them.
 
-## Windows
-
-The Windows adapter keeps this lifecycle (open, observe, act, release, recover) and the same receipts. What differs:
-
-- Launch: the helper starts the executable with CreateProcess, unactivated, with none of its own handles inherited. A Windows executable has no bundle identifier, so its file name stands in for it: chrome.exe, chromium.exe, msedge.exe and brave.exe get the private user-data-dir profile; any other App needs isolation=process. An executable that hands off to an already running instance exits at once and is reported as APP_INSTANCE_UNSUPPORTED; the user's instance is never adopted.
-- Identity: PID plus the process creation time, and the executable path compared case-insensitively. Ownership is an exclusive file open that no second helper can obtain (APP_ENTITY_IN_USE).
-- Elevation: a normal-integrity helper cannot observe or control an administrator App (UIPI). claim refuses it with ELEVATED_TARGET_UNSUPPORTED before anything is sent.
-- Observation: a bounded UI Automation tree. Element ids, isValueSettable and password handling match the macOS contract; a password field's value is never returned and never written. Window geometry is in physical pixels (unit "pixels"), and images are PNG of the visible frame, produced by asking the window to paint itself, so another window covering it does not appear in the image.
-- Dialogs: visible dialogs and owned pop-ups of the App are listed with texts and button titles, and answerDialog presses one by exact title or "[Close window]". Prompts of other processes are not read or answered on Windows.
-- Delivery: posted keys and pointer events are delivered, not confirmed; a value readback is the only confirmed effect. Treat an unverified result as unknown and observe again.
-- Close: release sends WM_CLOSE to the App's windows, so an App with unsaved work shows its own prompt; nothing is force-killed.
-
-### Dedicated virtual desktop
-
-The machine owner chooses where the AI's windows go with `remopilot configure --app-desktop virtual|current` (default current; needs desktop control). With virtual, the helper creates (or reuses) a desktop named `RemoPilot` or `RemoPilot · <desktopLabel>` and moves every window the launched App opens onto it, once per window, so the user's work is not disturbed and the user can switch there (Win+Tab) to log in or help. The interface Windows offers for this is undocumented and build-specific (Windows 11 24H2, build 26100.2605 or later). When it is missing or fails, the App starts on the current desktop and the entity's `desktop.fallback` names the reason; nothing is retried silently. A brief appearance on the user's desktop before the move is possible. Closing the last entity removes only a RemoPilot-named desktop that holds no windows and is not the one the user is on. The model must not change the setting, switch desktops or move windows between desktops.
