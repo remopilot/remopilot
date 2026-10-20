@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Project Development"
+  short_description: "Inspect, edit and verify projects on a selected remote computer"
+  default_prompt: "Use $remote-development to inspect the selected remote project, make the requested changes and run its existing checks."

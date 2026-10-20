@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Task Recovery"
+  short_description: "Track background tasks and recover original logs and results"
+  default_prompt: "Use $remote-tasks to check the specified task on its original computer, retrieve its progress and results, and verify whether execution has ended."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote App Control"
+  short_description: "Inspect and control supported macOS apps in dedicated instances"
+  default_prompt: "Use $remote-app to check desktop availability and permissions on the selected Mac, open the requested app in a dedicated instance and verify the requested action."

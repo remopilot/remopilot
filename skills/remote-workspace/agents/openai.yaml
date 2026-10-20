@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workspace Management"
+  short_description: "Select one or several paired computers and project directories"
+  default_prompt: "Use $remote-workspace to select the computers and project directories for this task. Show the selector when the target is unclear."

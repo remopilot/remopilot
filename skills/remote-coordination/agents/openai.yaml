@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parallel Tasks and Coordination"
+  short_description: "Coordinate tasks and dependencies on one or several computers"
+  default_prompt: "Use $remote-coordination to plan independent tasks across the selected computers, check shared resources, run them in parallel where possible and verify each result before starting dependent work."

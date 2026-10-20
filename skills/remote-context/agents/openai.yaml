@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Plans and Handoffs"
+  short_description: "Persist plans and resume tasks from their original evidence"
+  default_prompt: "Use $remote-context to save this task plan and progress, or restore its session and original execution references."

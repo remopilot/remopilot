@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Computer Tasks"
+  short_description: "Inspect computer connectivity, versions, capabilities and access"
+  default_prompt: "Use $remote-computer to inspect the selected computer and diagnose the requested connectivity, capability or permission issue."

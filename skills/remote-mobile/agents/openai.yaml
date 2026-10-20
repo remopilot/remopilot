@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Mobile Execution"
+  short_description: "Build, install and run iOS Simulator projects on a selected Mac"
+  default_prompt: "Use $remote-mobile to build and run the selected project in iOS Simulator on the selected Mac, then verify installation and launch from the original task evidence."
