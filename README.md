@@ -62,6 +62,18 @@ remopilot setup
 
 Use the `x64` archive on an Intel Mac. The installer verifies the publisher signature and package layout before changing the managed installation. It does not overwrite an unrelated App, follow package symlinks or accept a package for another target.
 
+### Bootstrap script
+
+The repository also provides a small bootstrap script that selects the matching archive, verifies `SHA256SUMS` and runs the package installer:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/remopilot/remopilot/main/install.sh -o install.sh
+less install.sh
+sh install.sh
+```
+
+Review the script before running it. It downloads the signed release archive and does not build from source. The manual archive steps above remain available if you prefer to verify and extract the package yourself.
+
 ## Upgrade
 
 ```sh

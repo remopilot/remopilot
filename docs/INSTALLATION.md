@@ -47,6 +47,18 @@ Use the `x64` archive on an Intel Mac. The archive contains the signed CLI, the 
 
 The installer verifies the publisher signature and the package layout before writing the managed installation. It does not overwrite an unrelated App, follow package symlinks or accept a package for another target. Existing configuration, pairing and permissions are retained.
 
+### Bootstrap script
+
+The repository provides a bootstrap script for the same archive flow:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/remopilot/remopilot/main/install.sh -o install.sh
+less install.sh
+sh install.sh
+```
+
+It detects `arm64` or `x86_64`, downloads the matching archive and `SHA256SUMS`, verifies the checksum, extracts the package and runs `install.sh` from the extracted archive. Review the script before running it. It does not compile the product or require a source checkout.
+
 ## Pairing and permissions
 
 When `setup` displays a machine code, open the pairing page yourself in a browser, sign in, enter that code on the computer and review the requested directories and capabilities. Do not send a pairing code to an assistant.
