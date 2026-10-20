@@ -2,6 +2,13 @@
 
 RemoPilot connects ChatGPT and Codex to computers you pair yourself. From one conversation you can work with an authorized project or machine, run its existing tools, follow long-running work, recover the original request after a disconnect, and operate supported macOS applications in an owned background instance.
 
+<p align="center">
+  <a href="https://remopilot.com"><strong>Website</strong></a> ·
+  <a href="https://github.com/remopilot/remopilot/releases/tag/v1.0.24">Latest release</a> ·
+  <a href="docs/INSTALLATION.md">Install</a> ·
+  <a href="docs/HOMEBREW.md">Homebrew</a>
+</p>
+
 ## This repository
 
 This is the public distribution surface for RemoPilot. It contains:
@@ -11,7 +18,7 @@ This is the public distribution surface for RemoPilot. It contains:
 - the Homebrew Formula
 - release notes
 
-It does **not** contain product source code, build scripts, release credentials, machine data, logs, or development history. The product source remains private. Public distribution does not make the source open source and does not guarantee that client code cannot be reverse engineered.
+It does **not** contain product source code, build scripts, release credentials, machine data, logs, or development history. The product source remains private and is not licensed under the repository license. The documentation, user Skills, Homebrew Formula and installer scripts in this repository are licensed under Apache-2.0; see [License](#license).
 
 ## Current release
 
@@ -128,3 +135,9 @@ Skills require an authenticated RemoPilot connection and a paired machine. Downl
 - [Installation and verification](docs/INSTALLATION.md)
 - [Homebrew guide](docs/HOMEBREW.md)
 - [Release notes](docs/RELEASE-NOTES-1.0.24.md)
+
+## License
+
+The documentation, user Skills, Homebrew Formula and installer scripts in this repository are licensed under the [Apache License 2.0](LICENSE).
+
+The RemoPilot name, logo, product binaries and product source are **not** licensed under Apache-2.0. See [TRADEMARK.md](TRADEMARK.md) for brand-use rules. The signed installation archives remain subject to the terms and third-party notices included with each release.
