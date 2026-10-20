@@ -8,6 +8,18 @@ set -eu
 REPO="remopilot/remopilot"
 VERSION="1.0.24"
 
+DRY_RUN=0
+case "${1:-}" in
+  "") ;;
+  --dry-run)
+    DRY_RUN=1
+    ;;
+  *)
+    echo "Usage: $0 [--dry-run]" >&2
+    exit 2
+    ;;
+esac
+
 case "$(uname -s)" in
   Darwin) ;;
   *)
@@ -45,6 +57,11 @@ curl -fL --retry 3 --retry-delay 2 -o "${TMP}/SHA256SUMS" "${BASE}/SHA256SUMS"
 )
 
 tar -xzf "${TMP}/${ARCHIVE}" -C "$TMP"
+
+if [ "$DRY_RUN" -eq 1 ]; then
+  echo "Verified ${ARCHIVE} and SHA256SUMS. Dry run: installation was not started."
+  exit 0
+fi
 
 echo "Installing RemoPilot ${VERSION} (${TARGET})..."
 (

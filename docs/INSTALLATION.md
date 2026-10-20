@@ -57,7 +57,7 @@ less install.sh
 sh install.sh
 ```
 
-It detects `arm64` or `x86_64`, downloads the matching archive and `SHA256SUMS`, verifies the checksum, extracts the package and runs `install.sh` from the extracted archive. Review the script before running it. It does not compile the product or require a source checkout.
+It detects `arm64` or `x86_64`, downloads the matching archive and `SHA256SUMS`, verifies the checksum, extracts the package and runs `install.sh` from the extracted archive. Use `sh install.sh --dry-run` to stop after verification without starting the package installer. Review the script before running it. It does not compile the product or require a source checkout.
 
 ## Pairing and permissions
 

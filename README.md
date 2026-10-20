@@ -72,7 +72,7 @@ less install.sh
 sh install.sh
 ```
 
-Review the script before running it. It downloads the signed release archive and does not build from source. The manual archive steps above remain available if you prefer to verify and extract the package yourself.
+Review the script before running it. It downloads the signed release archive and does not build from source. To verify the download and checksum without installing, run `sh install.sh --dry-run`. The manual archive steps above remain available if you prefer to verify and extract the package yourself.
 
 ## Upgrade
 
