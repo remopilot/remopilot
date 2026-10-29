@@ -123,9 +123,17 @@ Exact tool names, input schemas and permissions come from the installed machine 
 
 Skills require an authenticated RemoPilot connection and a paired machine. Downloading these Markdown files does not grant access, install a server or authorize a project directory.
 
+## Claude plugin
+
+[`claude-plugin/`](claude-plugin/README.md) is the Claude Code plugin bundle for Anthropic's plugin directory. It contains its own manifest, the remote MCP connection to `https://app.remopilot.com/claude/mcp`, eight skills with their reference documents, a README, and license files. Its independent version is `1.3.6`; it does not follow the machine runtime version above.
+
+The bundle contains no hooks, executable files, credentials or product source. Skill bodies ship inside the folder, so installing the plugin does not download behavioral instructions. Installing the plugin does not install the runtime: pair a computer first, then complete the plugin's OAuth sign-in.
+
+Each host keeps its own sibling folder, such as a future `codex-plugin/`, because manifests, connection files and skill packaging differ by host.
+
 ## Privacy and security
 
-- This repository contains only user-facing Skills, their referenced instructions, the Homebrew Formula and installation documentation.
+- This repository contains only user-facing Skills, their referenced instructions, the Claude plugin bundle, the Homebrew Formula and installation documentation.
 - Installation archives contain the signed programs, embedded Skills, dependency notices and the relinking material required by the bundled runtime license. They do not contain product source, build scripts, credentials, logs, machine data or private Git history.
 - The official cloud service, the machine agent, the home plugin and this repository are separate release surfaces. Updating one does not automatically update the others.
 - Keep credentials in the machine's private configuration. Never paste access tokens, pairing codes or private keys into chat, documentation or issue reports.

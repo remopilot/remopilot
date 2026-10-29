@@ -1,0 +1,24 @@
+{
+  "name": "remopilot",
+  "displayName": "RemoPilot",
+  "version": "1.3.6",
+  "description": "Use one conversation to operate one selected paired computer (1:1), or coordinate tasks across several (1:many). Inspect and edit project files, run commands, track background jobs and recover original results using each computer’s available capabilities.",
+  "author": {
+    "name": "RemoPilot",
+    "url": "https://remopilot.com"
+  },
+  "homepage": "https://remopilot.com",
+  "repository": "https://github.com/remopilot/remopilot",
+  "license": "Apache-2.0",
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/remopilot/remopilot",
+  "supportUrl": "https://app.remopilot.com/support",
+  "privacyPolicyUrl": "https://app.remopilot.com/privacy",
+  "termsOfServiceUrl": "https://app.remopilot.com/terms",
+  "keywords": [
+    "remote tasks",
+    "multi-computer workflows",
+    "development",
+    "background jobs"
+  ]
+}

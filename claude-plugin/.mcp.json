@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "remopilot": {
+      "type": "http",
+      "url": "https://app.remopilot.com/claude/mcp"
+    }
+  }
+}
