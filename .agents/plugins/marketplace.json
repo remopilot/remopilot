@@ -1,0 +1,20 @@
+{
+  "name": "remopilot",
+  "interface": {
+    "displayName": "RemoPilot"
+  },
+  "plugins": [
+    {
+      "name": "remopilot",
+      "source": {
+        "source": "local",
+        "path": "./codex-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "remopilot",
+  "version": "1.3.6",
+  "description": "Use one conversation to operate one selected paired computer (1:1), or coordinate tasks across several (1:many). Inspect and edit project files, run commands, track background jobs and recover original results using each computer’s available capabilities.",
+  "author": {
+    "name": "RemoPilot",
+    "url": "https://remopilot.com"
+  },
+  "homepage": "https://remopilot.com",
+  "repository": "https://github.com/remopilot/remopilot",
+  "license": "Apache-2.0",
+  "keywords": [
+    "remote tasks",
+    "multi-computer workflows",
+    "development",
+    "background jobs"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/remote-workspace/SKILL.md",
+      "interface": {
+        "displayName": "RemoPilot",
+        "shortDescription": "One chat, one or many machines",
+        "longDescription": "RemoPilot connects ChatGPT and Codex to computers you have paired. It supports two modes: 1:1 means one conversation operating one selected computer; 1:many means the same conversation operating multiple selected computers, with a separate target and execution record for each computer.\n\nIn 1:1 mode, inspect the selected computer, choose a project, search and edit files, run commands, build and verify changes, and save Git checkpoints. Machine tasks can run without selecting a project. Commands use the tools and computing resources already available on that computer.\n\nIn 1:many mode, assign work to each selected computer, run independent tasks in parallel, track each task separately and collect their results in the same conversation. Coordinate dependencies and start the next step after the required work succeeds. Shared resources and execution capacity can limit parallel work.\n\nLong tasks can continue in the background within their execution limits. Return to their progress, logs and original results after a connection interruption. Save task summaries and original references for a new chat; recovery requires the original computer to be online.\n\nOn macOS 14 or later, inspect and interact with supported apps in dedicated background instances using accessibility elements and window screenshots. This requires a usable desktop session and the relevant system permissions. The managed mobile workflow currently builds, installs and runs iOS Simulator projects on a Mac with Xcode.\n\nCapabilities depend on the installed runtime, operating system, tools and permissions reported by each selected computer. This plugin supplies connection and loading instructions; it does not include machine installers.\n\nSign in, install the RemoPilot runtime, pair each computer in the browser and enable the capabilities you need. Availability depends on the computer, installed tools and permissions. Commands run with its operating-system user permissions. Selected files, output and screenshots may be relayed into your chat; persistent execution records remain on the executing computer, while the cloud retains account and routing metadata.",
+        "developerName": "RemoPilot",
+        "category": "Developer Tools",
+        "capabilities": [
+          "1:1 tasks on one paired computer",
+          "1:many tasks across multiple computers",
+          "Select machines and projects",
+          "Search and edit project files",
+          "Run commands and build workflows",
+          "Track and recover background tasks",
+          "Save Git checkpoints",
+          "Save and restore task handoffs",
+          "Control supported macOS app instances",
+          "Build and run iOS Simulator projects"
+        ],
+        "defaultPrompt": [
+          "Show my paired computers and help me run a 1:1 task on the one I choose.",
+          "Inspect my selected project, make the requested changes and run its existing checks.",
+          "Run a 1:many workflow: coordinate independent tasks across my selected computers, then collect their results."
+        ],
+        "websiteURL": "https://remopilot.com",
+        "privacyPolicyURL": "https://app.remopilot.com/privacy",
+        "termsOfServiceURL": "https://app.remopilot.com/terms",
+        "brandColor": "#007B6D",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}
