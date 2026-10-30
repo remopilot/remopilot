@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="RemoPilot">
+  <title>RemoPilot · 协同翼队</title>
+  <desc>三片向右上方汇聚的翼，青绿领翼与墨黑副翼，代表一个对话协调多台电脑。</desc>
+  <g id="foreground" fill="#11151A">
+    <g transform="translate(147 256) scale(1.48)">
+      <path id="support-wing" d="M75 332 C85 287 110 250 151 224 L449 56 L274 240 C252 261 231 275 198 288 Z"/>
+      <path id="trailing-wing" d="M164 341 L399 165 L302 307 C285 332 263 341 230 341 Z"/>
+    </g>
+  </g>
+  <g id="accent" fill="#01C5B2">
+    <g transform="translate(147 256) scale(1.48)">
+      <path id="leading-wing" d="M0 329 V230 C0 174 17 135 65 113 C88 102 110 98 143 89 L493 0 L80 250 C44 273 18 298 0 329 Z"/>
+    </g>
+  </g>
+</svg>

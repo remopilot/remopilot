@@ -1,10 +1,14 @@
 # RemoPilot
 
+<p align="center">
+  <img src="assets/icon.png" width="112" alt="RemoPilot app icon">
+</p>
+
 RemoPilot connects ChatGPT and Codex to computers you pair yourself. From one conversation you can work with an authorized project or machine, run its existing tools, follow long-running work, recover the original request after a disconnect, and operate supported macOS applications in an owned background instance.
 
 <p align="center">
   <a href="https://remopilot.com"><strong>Website</strong></a> ·
-  <a href="https://github.com/remopilot/remopilot/releases/tag/v1.0.24">Latest release</a> ·
+  <a href="https://github.com/remopilot/remopilot/releases/tag/v1.0.26">Latest release</a> ·
   <a href="docs/INSTALLATION.md">Install</a> ·
   <a href="docs/HOMEBREW.md">Homebrew</a>
 </p>
@@ -22,16 +26,18 @@ It does **not** contain product source code, build scripts, release credentials,
 
 ## Current release
 
-Version `1.0.24` provides macOS packages for:
+Version `1.0.26` provides macOS packages for:
 
 | Target | Machine | Package |
 |---|---|---|
-| `darwin-arm64` | Apple Silicon Mac | `remopilot-1.0.24-darwin-arm64.tar.gz` |
-| `darwin-x64` | Intel Mac | `remopilot-1.0.24-darwin-x64.tar.gz` |
+| `darwin-arm64` | Apple Silicon Mac | `remopilot-1.0.26-darwin-arm64.tar.gz` |
+| `darwin-x64` | Intel Mac | `remopilot-1.0.26-darwin-x64.tar.gz` |
 
 Other platforms are not part of this release. Do not install a package for another platform or reuse an older archive for this version.
 
 The Intel package has not yet been fully verified on a physical Intel Mac. Check browser pairing, background-service permissions and cold-start behavior on the target machine before relying on it.
+
+This release introduces the coordinated-wings brand icon and a console-style Mac launcher with in-app pairing, bounded pairing codes and refreshed permission and capability controls. See the [1.0.26 release notes](docs/RELEASE-NOTES-1.0.26.md).
 
 ## Requirements
 
@@ -62,7 +68,7 @@ Download the archive matching the Mac and `SHA256SUMS` from the versioned Releas
 
 ```sh
 shasum -a 256 -c SHA256SUMS
-tar -xzf remopilot-1.0.24-darwin-arm64.tar.gz
+tar -xzf remopilot-1.0.26-darwin-arm64.tar.gz
 sh install.sh
 remopilot setup
 ```
@@ -155,7 +161,7 @@ Installing either plugin does not install the runtime: pair a computer first, th
 
 - [Installation and verification](docs/INSTALLATION.md)
 - [Homebrew guide](docs/HOMEBREW.md)
-- [Release notes](docs/RELEASE-NOTES-1.0.24.md)
+- [Release notes](docs/RELEASE-NOTES-1.0.26.md)
 
 ## License
 

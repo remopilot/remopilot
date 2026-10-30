@@ -8,6 +8,10 @@ Codes expire after ten minutes. The browser confirmation has a separate five-min
 
 Setup normally registers the background service and connects after approval; an explicit no-service installation still needs manual start. Repeating setup preserves an existing identity rather than pairing again. Inspect actual startup/connection evidence, including login or boot-start constraints for that platform. Directory, command and desktop permissions are independent. Do not enable capabilities merely because a machine appears in the list.
 
+Re-running setup before approval supersedes the previous pending code and returns a new one; a previously displayed code or approval page must not be reused. A cancelled or expired attempt can be restarted immediately with the same machine credential. If activation reports `PAIR_NOT_FOUND` or `PAIR_CLOSED`, use the newest code from the current terminal.
+
+A revoked machine may be paired again with its original machine credential; approval restores the same machine ID and credential rather than creating a duplicate. The control plane refuses to transfer a revoked identity to a different account.
+
 Machines use outbound connections. A reconnect or renewed expired code can preserve the unpaired machine ID; copying configuration copies identity and is not how to add a second computer. Approval establishes ownership, while readiness requires the separate live connection. machine_revoke removes access credentials, not already running OS jobs; revoked credentials can prevent later original-ID recovery. Confirm that consequence when revocation is the requested action.
 
 For connected account mismatches, manual client credentials and ChatGPT/Claude/Gemini/Muse OAuth renewal, read [account.md](account.md). Login does not pair a machine, and loading a Skill does not grant command, directory or desktop access.

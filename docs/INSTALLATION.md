@@ -2,7 +2,7 @@
 
 ## Availability
 
-Version `1.0.24` provides macOS packages for Apple Silicon and Intel Macs. Other platforms are not part of this release.
+Version `1.0.26` provides macOS packages for Apple Silicon and Intel Macs. Other platforms are not part of this release.
 
 Install only the archive for the Mac you are using. Never paste a GitHub token, pairing code, private key or other credential into these instructions, chat or an issue.
 
@@ -10,8 +10,8 @@ Install only the archive for the Mac you are using. Never paste a GitHub token, 
 
 | Package | Machine |
 |---|---|
-| `remopilot-1.0.24-darwin-arm64.tar.gz` | Apple Silicon Mac |
-| `remopilot-1.0.24-darwin-x64.tar.gz` | Intel Mac |
+| `remopilot-1.0.26-darwin-arm64.tar.gz` | Apple Silicon Mac |
+| `remopilot-1.0.26-darwin-x64.tar.gz` | Intel Mac |
 
 Both archives are Developer ID signed and notarized. The Apple Silicon package is signed, notarized and tested for installation and CLI startup. The Intel package has not yet been fully verified on a physical Intel Mac; check pairing, background-service access and cold-start behavior on the target machine.
 
@@ -32,13 +32,13 @@ If Homebrew is not installed, follow its [official installation guide](https://d
 
 ## Install from an archive
 
-1. Download `remopilot-1.0.24-darwin-arm64.tar.gz` or `remopilot-1.0.24-darwin-x64.tar.gz` from the versioned Release.
+1. Download `remopilot-1.0.26-darwin-arm64.tar.gz` or `remopilot-1.0.26-darwin-x64.tar.gz` from the versioned Release.
 2. Download `SHA256SUMS` from the same Release.
 3. Verify and install:
 
 ```sh
 shasum -a 256 -c SHA256SUMS
-tar -xzf remopilot-1.0.24-darwin-arm64.tar.gz
+tar -xzf remopilot-1.0.26-darwin-arm64.tar.gz
 sh install.sh
 remopilot setup
 ```
@@ -96,10 +96,10 @@ remopilot homebrew --action install --config /absolute/work/.remopilot/agent/con
 
 ## Downloads and integrity
 
-The versioned `v1.0.24` Release contains the two macOS archives and `SHA256SUMS`. Select the archive matching the Mac architecture and compare its SHA-256 with the corresponding line:
+The versioned `v1.0.26` Release contains the two macOS archives and `SHA256SUMS`. Select the archive matching the Mac architecture and compare its SHA-256 with the corresponding line:
 
 ```sh
-shasum -a 256 remopilot-1.0.24-darwin-arm64.tar.gz
+shasum -a 256 remopilot-1.0.26-darwin-arm64.tar.gz
 ```
 
 Published version archives are not replaced. If a package is wrong, a new version is prepared with new checksums. The release feed, the cloud service, the machine agent and the home plugin are separate release surfaces; publishing this repository does not update an installed service.

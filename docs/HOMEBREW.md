@@ -7,7 +7,7 @@ The Formula in `Formula/remopilot.rb` selects the macOS archive for the current 
 | Apple Silicon | `darwin-arm64` |
 | Intel | `darwin-x64` |
 
-Version `1.0.24` provides macOS packages only.
+Version `1.0.26` provides macOS packages only.
 
 ## Install
 

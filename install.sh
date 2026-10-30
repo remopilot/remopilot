@@ -6,7 +6,7 @@ set -eu
 # installer contained in the archive. It does not build from source.
 
 REPO="remopilot/remopilot"
-VERSION="1.0.24"
+VERSION="1.0.26"
 
 DRY_RUN=0
 case "${1:-}" in

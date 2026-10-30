@@ -12,3 +12,12 @@ Current app launch uses NSWorkspace and control uses Accessibility. It sends no 
 
 If a window is unreadable, verify the entity's original identity, actual error, and owned-window candidates. Do not send input after failed observation. A read-only user request does not authorize document edits to test effects. Delivered AXPress is not proof of business success. For uncertainty, query the original operationId/callId and inspect this entity's interface rather than clicking again.
 
+## Windows
+
+- ELEVATED_TARGET_UNSUPPORTED: the App runs as administrator and a normal helper cannot reach it. Do not retry; ask the user to start it normally or operate it themselves. UAC and other secure-desktop prompts are never visible to the helper.
+- ACTIVATE_WOULD_SWITCH_DESKTOP: the App's window is on its own virtual desktop. Use requestHelp so the user can switch when ready; do not try another focus path.
+- desktop.fallback on an entity (VIRTUAL_DESKTOP_UNAVAILABLE or VIRTUAL_DESKTOP_FAILED): the machine asked for a dedicated desktop but this Windows build or call did not allow it. The App is on the user's current desktop; tell the user and continue only if that is acceptable.
+- APP_NOT_FRONTMOST: the focused control reads real input state and the App is not in front, so nothing was sent. Prefer setValue on a settable field, then clipboard=true, then borrowFocus=true.
+- CLIPBOARD_NOT_RESTORABLE: the clipboard holds non-text content that a paste could not restore, so nothing was pasted.
+- A locked screen or a disconnected remote session can leave windows unpaintable (CAPTURE_FAILED) while accessibility still answers; report it instead of retrying input.
+- Windows has no permission prompts for this adapter: app_permissions only reports that. Failures are integrity levels, session state or the App's own accessibility support, not missing grants.
