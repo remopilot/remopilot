@@ -118,28 +118,28 @@ Exact tool names, input schemas and permissions come from the installed machine 
 
 | Skill | Purpose |
 |---|---|
-| [remote-workspace](skills/remote-workspace/SKILL.md) | Select paired computers, authorized projects and bindings |
-| [remote-computer](skills/remote-computer/SKILL.md) | Machine connectivity, capabilities, diagnostics and commands |
-| [remote-development](skills/remote-development/SKILL.md) | Project files, development commands and Git |
-| [remote-tasks](skills/remote-tasks/SKILL.md) | Background work and original-request recovery |
-| [remote-coordination](skills/remote-coordination/SKILL.md) | Independent work across selected machines |
-| [remote-context](skills/remote-context/SKILL.md) | Durable task summaries and handoff |
-| [remote-app](skills/remote-app/SKILL.md) | Supported installed macOS apps in owned instances |
-| [remote-mobile](skills/remote-mobile/SKILL.md) | iOS Simulator work on a paired Mac |
+| [cloud-connection](skills/cloud-connection/SKILL.md) | Connect an account and select authorized computers and projects |
+| [computer-system](skills/computer-system/SKILL.md) | Machine connectivity, capabilities, diagnostics and commands |
+| [computer-development](skills/computer-development/SKILL.md) | Project files, development commands and Git |
+| [computer-tasks](skills/computer-tasks/SKILL.md) | Background work, coordination, handoff and original-request recovery |
+| [computer-app](skills/computer-app/SKILL.md) | Supported installed macOS apps in owned instances |
+| [computer-mobile](skills/computer-mobile/SKILL.md) | Supported mobile simulator work on a paired computer |
 
 Skills require an authenticated RemoPilot connection and a paired machine. Downloading these Markdown files does not grant access, install a server or authorize a project directory.
 
 ## Plugin bundles
 
-Each host keeps its own sibling folder, because manifests, connection files and skill packaging differ by host. Both bundles below are versioned independently at `1.3.6` and do not follow the machine runtime version above. Neither contains hooks, executable files, credentials or product source; skill bodies ship inside each folder, so installing a plugin does not download behavioral instructions.
+This checkout stages the next `1.3.10` plugin bundles. They require the matching cloud tool catalog and have not yet been published or accepted as a coordinated release. The publicly available bundles may still be older; do not install this candidate until the matching service is deployed and validated.
+
+Each host keeps its own sibling folder, because manifests, connection files and skill packaging differ by host. Both bundles below are versioned independently at `1.3.10` and do not follow the machine runtime version above. Neither contains hooks, executable files, credentials or product source; skill bodies ship inside each folder, so installing a plugin does not download behavioral instructions.
 
 ### Claude plugin
 
-[`claude-plugin/`](claude-plugin/README.md) is the Claude Code plugin bundle for Anthropic's plugin directory. It contains its own manifest, the remote MCP connection to `https://app.remopilot.com/claude/mcp`, eight skills with their reference documents, a README, and license files.
+[`claude-plugin/`](claude-plugin/README.md) is the Claude Code plugin bundle for Anthropic's plugin directory. It contains its own manifest, the remote MCP connection to `https://app.remopilot.com/claude/mcp`, six skills with their reference documents, a README, and license files.
 
 ### Codex and ChatGPT plugin
 
-[`codex-plugin/`](codex-plugin/README.md) is the Codex and ChatGPT plugin bundle in the portable Agent Plugins 1.0 layout: a root `plugin.json`, `mcp.json` for the remote server at `https://app.remopilot.com/chatgpt/mcp`, eight skills with their reference documents, a README, and license files. OpenAI presentation metadata lives under `extensions.com.openai`.
+[`codex-plugin/`](codex-plugin/README.md) is the Codex and ChatGPT plugin bundle in the portable Agent Plugins 1.0 layout: a root `plugin.json`, `mcp.json` for the remote server at `https://app.remopilot.com/chatgpt/mcp`, six skills with their reference documents, a README, and license files. OpenAI presentation metadata lives under `extensions.com.openai`.
 
 The catalog for the Codex CLI and the ChatGPT desktop app is [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json), which points at `./codex-plugin`:
 
@@ -148,7 +148,7 @@ codex plugin marketplace add remopilot/remopilot
 codex plugin add remopilot@remopilot
 ```
 
-Installing either plugin does not install the runtime: pair a computer first, then complete the plugin's OAuth sign-in.
+Installing either plugin does not install the runtime: pair a computer first, then complete the plugin's OAuth sign-in. Selecting a project does not install its dependencies; follow that project's setup instructions on the selected computer.
 
 ## Privacy and security
 

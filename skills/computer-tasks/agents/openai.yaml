@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer Tasks and Handoffs"
+  short_description: "Plan and recover computer tasks, logs and handoffs"
+  default_prompt: "Use $computer-tasks to plan or resume the specified task, inspect its original execution and preserve its progress."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer Mobile Interaction"
+  short_description: "Observe and control simulators on a selected computer"
+  default_prompt: "Use $computer-mobile to inspect and interact with the selected mobile simulator on the selected computer, using current screenshots or UI state and verifying each requested effect."

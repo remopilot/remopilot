@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer System"
+  short_description: "Inspect computer connectivity, versions, capabilities and access"
+  default_prompt: "Use $computer-system to inspect the selected computer and diagnose the requested connectivity, capability or permission issue."

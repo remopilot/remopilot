@@ -4,7 +4,7 @@ RemoPilot connects Claude to computers you pair yourself. From one conversation 
 
 ## What this plugin contains
 
-- Eight skills that describe how to select a computer, bind a project, run and verify work, coordinate several computers, and recover a task by its original request.
+- Six skills that describe how to select a computer, bind a project, run and verify work, coordinate several computers, and recover a task by its original request.
 - `.mcp.json`, which declares one remote MCP server: `https://app.remopilot.com/claude/mcp`.
 - An icon, this README, and the license files.
 
@@ -17,6 +17,10 @@ The bundle contains no hooks, no local executables, no background daemons, no bu
 3. Connect the RemoPilot server in Claude and complete the OAuth sign-in when prompted.
 
 Availability depends on the selected computer, its operating system, its installed tools, and the permissions you grant. This plugin supplies connection and workflow guidance; it does not install the runtime.
+
+If you are upgrading from an older RemoPilot plugin, update the plugin, reconnect the server in Claude, and start a new conversation to load its current tools. Keep the original binding and request identifiers for any unfinished work and recover the existing request without replaying it. The plugin and the cloud service must support the same tool contract.
+
+Selecting a project does not install that project's dependencies. Follow the project's own setup instructions on the selected computer. The computer owner can add supported local Skills and external MCP servers explicitly; reading their catalog does not start a server or install its dependencies.
 
 ## What it runs, sends, and receives
 

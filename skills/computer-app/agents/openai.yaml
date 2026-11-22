@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer App Control"
+  short_description: "Control supported apps and configured browser connections"
+  default_prompt: "Use $computer-app to inspect the selected machine, use a configured browser connection when relevant, and verify the requested action."

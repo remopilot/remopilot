@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer Development"
+  short_description: "Inspect, edit and verify the selected computer project"
+  default_prompt: "Use $computer-development to inspect the selected computer project, make the requested changes and run its existing checks."
