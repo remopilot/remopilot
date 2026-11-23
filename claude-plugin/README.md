@@ -12,6 +12,8 @@ The bundle contains no hooks, no local executables, no background daemons, no bu
 
 ## Before you install
 
+**MCP contract:** Version `1.4.0` requires a service connection that exposes `task_query`, `task_update`, and `target_select`. Updating this GitHub repository does not deploy the service. The connected server’s actual tool catalog remains authoritative.
+
 1. Create an account at <https://app.remopilot.com>.
 2. Install the RemoPilot runtime on each computer you want to use, then pair it from the browser. Pairing requires you to type the six-digit code shown on that computer; the plugin never enters or approves it.
 3. Connect the RemoPilot server in Claude and complete the OAuth sign-in when prompted.

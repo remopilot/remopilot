@@ -25,6 +25,8 @@ The bundle contains no hooks, no local executables, no background daemons, no bu
 
 ## Install
 
+**MCP contract:** Version `1.4.0` requires a service connection that exposes `task_query`, `task_update`, and `target_select`. Updating this GitHub repository does not deploy the service. The connected server’s actual tool catalog remains authoritative.
+
 Add the marketplace from this repository, then install the plugin:
 
 ```sh

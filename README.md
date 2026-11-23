@@ -129,9 +129,9 @@ Skills require an authenticated RemoPilot connection and a paired machine. Downl
 
 ## Plugin bundles
 
-This checkout stages the next `1.3.10` plugin bundles. They require the matching cloud tool catalog and have not yet been published or accepted as a coordinated release. The publicly available bundles may still be older; do not install this candidate until the matching service is deployed and validated.
+This repository carries the `1.4.0` plugin bundles. This is a breaking MCP contract update: the matching cloud service must expose `task_query`, `task_update`, and `target_select`. Updating this repository does not deploy the cloud service or update paired computers.
 
-Each host keeps its own sibling folder, because manifests, connection files and skill packaging differ by host. Both bundles below are versioned independently at `1.3.10` and do not follow the machine runtime version above. Neither contains hooks, executable files, credentials or product source; skill bodies ship inside each folder, so installing a plugin does not download behavioral instructions.
+Each host keeps its own sibling folder, because manifests, connection files and skill packaging differ by host. Both bundles below use product version `1.4.0` and are distributed separately from the machine runtime above. Neither contains hooks, executable files, credentials or product source; skill bodies ship inside each folder, so installing a plugin does not download behavioral instructions.
 
 ### Claude plugin
 
@@ -153,7 +153,7 @@ Installing either plugin does not install the runtime: pair a computer first, th
 ## Privacy and security
 
 - This repository contains only user-facing Skills, their referenced instructions, the Claude and Codex plugin bundles, the Homebrew Formula and installation documentation.
-- Installation archives contain the signed programs, embedded Skills, dependency notices and the relinking material required by the bundled runtime license. They do not contain product source, build scripts, credentials, logs, machine data or private Git history.
+- Installation archives contain signed programs, embedded Skills, dependency notices and relinking material. Relinking material may include readable minified application implementation and dependencies; consult each release’s contents. The original private source tree, release credentials and machine data are not part of this repository.
 - The official cloud service, the machine agent, the home plugin and this repository are separate release surfaces. Updating one does not automatically update the others.
 - Keep credentials in the machine's private configuration. Never paste access tokens, pairing codes or private keys into chat, documentation or issue reports.
 
@@ -161,6 +161,7 @@ Installing either plugin does not install the runtime: pair a computer first, th
 
 - [Installation and verification](docs/INSTALLATION.md)
 - [Homebrew guide](docs/HOMEBREW.md)
+- [1.4.0 MCP tool catalog and schemas](docs/MCP-TOOLS-1.4.0.md)
 - [Release notes](docs/RELEASE-NOTES-1.0.26.md)
 
 ## License

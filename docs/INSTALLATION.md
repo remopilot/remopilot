@@ -73,7 +73,7 @@ The signed `RemoPilot.app` provides permission status and authorization entry po
 
 ## Plugins and projects
 
-The machine runtime, cloud service and Claude or Codex plugin are separate deliveries. The `1.3.10` plugin bundles in this checkout are release candidates; install them only after the matching cloud tool catalog has been deployed and validated. The public installation may still offer an older plugin. After a compatible plugin update, reconnect it in the host and start a new conversation so the current Skills and tools load. Keep original binding and request identifiers for unfinished work and recover the original request without replaying it.
+The machine runtime, cloud service and Claude or Codex plugin are separate deliveries. The `1.4.0` plugin bundles use a new MCP tool contract; install them only after the matching cloud tool catalog has been deployed and validated. The public installation may still offer an older plugin. After a compatible plugin update, reconnect it in the host and start a new conversation so the current Skills and tools load. Keep original binding and request identifiers for unfinished work and recover the original request without replaying it.
 
 In a conversation, select a paired computer and an authorized project, then follow that project's own dependency installation and build instructions. Installing RemoPilot or its plugin does not install the project's dependencies.
 
