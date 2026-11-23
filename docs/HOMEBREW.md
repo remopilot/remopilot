@@ -1,6 +1,6 @@
 # RemoPilot Homebrew Tap
 
-The Formula in `Formula/remopilot.rb` selects the macOS archive for the current Mac:
+The Formula in `Formula/remopilot.rb` selects the compatible macOS archive for the current Mac. New graphical downloads use DMG; the archive remains available for the Homebrew activation and existing update flow:
 
 | Mac | Target |
 |---|---|
@@ -36,9 +36,9 @@ macOS managed services use a direct update. Running tasks and gateway sessions a
 
 `brew upgrade` updates only the Cellar candidate and launcher. Activation switches the managed installation. Managed programs, generation data and machine configuration stay outside Cellar and survive `brew cleanup` or `brew uninstall`. Use RemoPilot service management rather than `brew services`.
 
-## Archive fallback
+## DMG download
 
-If Homebrew is unavailable, download the archive matching the Mac and its `SHA256SUMS`, verify the checksum and run `install.sh` from the extracted package. See [installation and verification](INSTALLATION.md).
+When a release publishes a DMG, download the image matching the Mac and verify its `SHA256SUMS`, then open it and run `Install RemoPilot.command`. The published 1.0.26 release provides archives only. See [installation and verification](INSTALLATION.md).
 
 ## Scope
 

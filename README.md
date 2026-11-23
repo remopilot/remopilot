@@ -62,12 +62,19 @@ remopilot setup
 
 On a new machine, `setup` starts browser pairing and lets you approve only the directories and capabilities you intend to use. Existing configuration, pairing and permissions are retained during an upgrade.
 
-## Install from an archive
+## Install from a downloaded package
 
-Download the archive matching the Mac and `SHA256SUMS` from the versioned Release, then verify and install:
+New macOS releases are prepared as signed, notarized DMG disk images. Open the
+image for your Mac and double-click `Install RemoPilot.command`, then follow the
+Terminal prompts. Verify the downloaded file against the release's
+`SHA256SUMS` before opening it. Availability depends on the actual release;
+the GitHub `1.0.26` release below predates DMG distribution.
+
+For GitHub `1.0.26`, download the archive matching the Mac and `SHA256SUMS`
+from the versioned Release, then verify and install:
 
 ```sh
-shasum -a 256 -c SHA256SUMS
+grep '  remopilot-1.0.26-darwin-arm64.tar.gz$' SHA256SUMS | shasum -a 256 -c -
 tar -xzf remopilot-1.0.26-darwin-arm64.tar.gz
 sh install.sh
 remopilot setup
@@ -77,7 +84,7 @@ Use the `x64` archive on an Intel Mac. The installer verifies the publisher sign
 
 ### Bootstrap script
 
-The repository also provides a small bootstrap script that selects the matching archive, verifies `SHA256SUMS` and runs the package installer:
+The repository also provides a small bootstrap script that selects the matching DMG when published, verifies `SHA256SUMS` and runs the package installer. It uses the archive for older releases without a DMG:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/remopilot/remopilot/main/install.sh -o install.sh
@@ -85,7 +92,7 @@ less install.sh
 sh install.sh
 ```
 
-Review the script before running it. It downloads the signed release archive and does not build from source. To verify the download and checksum without installing, run `sh install.sh --dry-run`. The manual archive steps above remain available if you prefer to verify and extract the package yourself.
+Review the script before running it. It downloads the release package and does not build from source. To verify the download and checksum without installing, run `sh install.sh --dry-run`.
 
 ## Upgrade
 

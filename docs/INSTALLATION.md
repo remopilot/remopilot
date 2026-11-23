@@ -8,6 +8,10 @@ Install only the archive for the Mac you are using. Never paste a GitHub token, 
 
 ## Supported packages
 
+New macOS releases are prepared as signed, notarized DMG images. The table
+below describes the published GitHub `1.0.26` release, which predates that
+change; no DMG or checksum is implied for an existing release.
+
 | Package | Machine |
 |---|---|
 | `remopilot-1.0.26-darwin-arm64.tar.gz` | Apple Silicon Mac |
@@ -30,14 +34,22 @@ The explicit `--custom-remote` form selects this repository. `brew install` only
 
 If Homebrew is not installed, follow its [official installation guide](https://docs.brew.sh/Installation).
 
-## Install from an archive
+## Install from a DMG
+
+When the selected release includes a DMG for your Mac, download it and
+`SHA256SUMS` from that same release. Compare the DMG's SHA-256 with its matching
+line, open the image, and double-click `Install RemoPilot.command`. Follow the
+Terminal prompts to complete installation and pairing. The image contains the
+managed installer; it is not a drag-to-Applications installation.
+
+## Install the published 1.0.26 archive
 
 1. Download `remopilot-1.0.26-darwin-arm64.tar.gz` or `remopilot-1.0.26-darwin-x64.tar.gz` from the versioned Release.
 2. Download `SHA256SUMS` from the same Release.
 3. Verify and install:
 
 ```sh
-shasum -a 256 -c SHA256SUMS
+grep '  remopilot-1.0.26-darwin-arm64.tar.gz$' SHA256SUMS | shasum -a 256 -c -
 tar -xzf remopilot-1.0.26-darwin-arm64.tar.gz
 sh install.sh
 remopilot setup
@@ -57,7 +69,7 @@ less install.sh
 sh install.sh
 ```
 
-It detects `arm64` or `x86_64`, downloads the matching archive and `SHA256SUMS`, verifies the checksum, extracts the package and runs `install.sh` from the extracted archive. Use `sh install.sh --dry-run` to stop after verification without starting the package installer. Review the script before running it. It does not compile the product or require a source checkout.
+It detects `arm64` or `x86_64`, downloads `SHA256SUMS` and selects the matching DMG if the release lists one; otherwise it uses the older archive. It verifies the checksum and, for a DMG, checks the image signature and Gatekeeper assessment before mounting it read-only and running its installer. Use `sh install.sh --dry-run` to stop after checksum verification without mounting or installing. Review the script before running it. It does not compile the product or require a source checkout.
 
 ## Pairing and permissions
 
